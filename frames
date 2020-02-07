@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>HTML FRAMES</title>
+</head>
+<frameset rows="50%,25%,25" cols="40%,*">
+<frame  src="file:///home/Sem6B11/20171cse0722/image.html"/>
+<frame  src="/home/Sem6B11/20171cse0722/html/yash1.jpg"/>
+<frame  src="/home/Sem6B11/20171cse0722/html/Yash Yash Photo Gallery Yash Videos Actor Yash Yash Profile(1).jpg"/>
+<frame  src="/home/Sem6B11/20171cse0722/html/index.jpeg"/>
+<frame  src="/home/Sem6B11/20171cse0722/html/labsheet1.html"/>
+<frame  src="file:///home/Sem6B11/20171cse0722/image.html"/>
+</frameset>
+</html>
+
+
+
+
