@@ -1,0 +1,29 @@
+<style>
+h1.big{
+font-weight:bold;
+font-style:normal;
+font-family:georgia serif;
+word-spacing:5px;
+font-size=medium;
+color:red;
+}
+p.medium
+{
+font-weight:italic;
+font-style:bolder;
+font-family:"Times New Roman", Times, serif;
+word-spacing:10px;
+font-size=large;
+color:green;
+}
+.small
+{
+font-weight:lighter;
+font-style:3px;
+font-family:"Times New Roman", Times, serif;
+word-spacing:10px;
+font-size=small;
+color:blue;
+text-transform:uppercase;
+}
+</style>
