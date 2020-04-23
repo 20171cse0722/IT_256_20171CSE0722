@@ -1,0 +1,359 @@
+<html>
+<head>
+<script type="text/javascript">
+const realFilebtn=document.getElementById("real-file");
+
+
+custombtn.addEventListener("click",function(){
+realFilebtn.click();
+});
+
+realFilebtn.addEventListener("change",function(){
+if(realFilebtn.value){
+customtxt.innerHTML=realFilebtn.value;
+}else{
+customtxt.innerHTML="No file choosen,yet";
+}
+});
+</script>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:#fec107;
+padding:0 10px;
+}
+
+.wrapper{
+max-width:900px;
+width:100%;
+background:#fff;
+margin:30px auto;
+padding:30px 30px 30px 30px;
+box-shadow:1px 1px 2px rgba(0,0,0,0.125);
+}
+
+.wrapper .title{
+font-size:24px;
+font-weight:700;
+margin-bottom:25px;
+color:#fec107;
+text-transform:uppercase;
+text-align:center;
+}
+
+.wrapper .form{
+width:100%;
+}
+
+.wrapper .form .input_field{
+margin-bottom:20px;
+display:flex;
+align-items:center;
+width:100%;
+}
+
+.wrapper .form .input_field label{
+width:200px;
+color:#757575;
+margin-right:10px;
+font-size:14px;
+}
+
+.wrapper .form .input_field .input,
+.wrapper .form .input_field .textarea{
+width:100%;
+outline:none;
+border:1px solid #d5dbd9;
+font-size:15px;
+padding:10px 10px;
+border-radius:3px;
+transition:all 0.3s ease;
+}
+
+.wrapper .form .input_field .inputarea{
+resize:none;
+height:125px;
+}
+
+.wrapper .form .input_field .custom_select{
+position:relative;
+width:100%;
+height:37px;
+}
+
+.wrapper .form .input_field .custom_select select{
+-webkit-appearance:none;
+appearance:none;
+border:1px solid #d5dbd9;
+width:100%;
+height:100%;
+padding:8px 10px;
+border-readius:3px;
+outline:none;
+}
+
+.wrapper .form .input_field .custom_select:before{
+content:"";
+position:absolute;
+top:12px;
+right:10px;
+border:8px solid;
+border-color:#d5dbd9 transparent transparent transparent;
+pointer-events:none;
+}
+
+.wrapper .form .input_field .input:focus,
+.wrapper .form .input_field .textarea:focus,
+.wrapper .form .input_field select:focus{
+border:1px solid #fec107;
+}
+
+@media(max-width:420px){
+.wrapper .form .input_field{
+flex-direction:column;
+align-items:flex-start;
+}
+.wrapper .form .input_field label{
+margin-bottom:5px;
+}
+}
+
+p{
+color:#757575;
+margin-right:10px;
+font-size:14px;
+padding:5px 0px 8px 0px;}
+
+.btn{
+font-size:20px;
+padding:
+}
+
+.wrapper #message{
+margin-bottom:20px;
+padding:0px;
+text-align:center;
+font-size:14px;
+background-color:#fe8b8e;
+transition:all 0.5s ease;
+}
+
+.input_field .lb{
+width:50px;
+color:#757575;
+margin-right:10px;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="wrapper">
+<div class="title">
+Registration Form
+</div>
+<form id="myform" onsubmit="validation()">
+<div class="form">
+<div class="input_field">
+<label>First Name</label>
+<input type="text" class="input" required>
+</div>
+
+<div class="input_field">
+<label>Last Name</label>
+<input type="text" class="input">
+</div>
+
+<div class="input_field">
+<label>Email id</label>
+<input type="text" class="input">
+</div>
+
+<div class="input_field">
+<label>Age</label>
+<input type="text" class="input">
+</div>
+
+<div class="input_field">
+<label>Gender</label>
+<div class="custom_select">
+<select>
+<option value="">Select</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+</select>
+</div>
+</div>
+
+<div class="input_field">
+<label>Phone Number</label>
+<input type="text" class="input" id="phno">
+</div>
+
+<div class="input_field">
+<label>Address</label>
+<textarea class="textarea"></textarea>
+</div>
+
+<div>
+<p>Choose Resume to upload</p>
+<input type="file" id="real-file"/>
+</div>
+<br>
+<div>
+<p>Choose Picture to upload</p>
+<input type="file" id="real-file"/>
+</div>
+<br>
+<div>
+<p>Choose Signature to upload</p>
+<input type="file" id="real-file"/>
+</div>
+<br>
+<div class="input_field">
+<label>Marks Section</label>
+<input type="radio" name="g1" id="per" value="per">
+<label for="per">&nbsp;Percentage</label><br>
+<input type="radio" name="g1" id="cgpa" value="cgpa">
+<label for="cgpa">&nbsp;CGPA</label>
+</div>
+
+<div class="input_field">
+<label class="lb">SSLC</label><input type="text" id="ss">
+<label class="lb">&emsp;PUC</label><input type="text" id="pu">
+<label class="lb">&emsp;DEGREE</label><input type="text" id="de">
+</div>
+
+
+<div class="input_field" onclick="get1()">
+<label>Specialization</label>
+<div class="custom_select">
+<select>
+<option value="">Select</option>
+<option value="CSE">CSE</option>
+<option value="IT">IT</option>
+<option value="ECE">ECE</option>
+<option value="EEE">EEE</option>
+<option value="CIVIL">CIVIL</option>
+<option value="MECHANICAL">MECHANICAL</option>
+</select>
+</div>
+</div>
+
+<div class="input_field">
+<label>Year of Passing</label>
+<input type="number" placeholder="YYYY" min="2020" max="2022" class="input" id="yop" required>
+</div>
+
+<div class="input_field">
+<label>DOB</label>
+<input type="date" class="input">
+</div>
+
+<div class="input_field">
+<label>Technical Skills</label>
+<div class="check_box">
+<input type="checkbox" id="spl">&nbsp;C/C++</input>&emsp;&emsp;
+<input type="checkbox" id="spl1">&nbsp;Java</input><br>
+<input type="checkbox" id="spl2">&nbsp;DBMS</input>&emsp;&emsp;
+<input type="checkbox" id="spl3">&nbsp;CCNA Testing</input>
+</div>
+</div>
+<div id="message"></div>
+<div class="input_field">
+<input type="reset" onclick="res()" class="btn" value="Reset">
+</div>
+<script type="text/javascript">
+function res(){
+var x=document.getElementsByClassName('form');
+console.log(x);
+for(var i=0;i<x.length;i++){
+x[i].value="";
+}}
+</script>
+<div class="input_field">
+<button type="button" onclick="validation()" class="btn">Submit</button>
+</div>
+<script type="text/javascript">
+function validation(){
+var a=document.getElementById('phno').value;
+var b=document.getElementById('spl').checked;
+var b1=document.getElementById('spl1').checked;
+var b2=document.getElementById('spl2').checked;
+var b3=document.getElementById('spl3').checked;
+var yop=document.getElementById('yop');
+
+message.style.padding="10px";
+
+if(a==""){
+document.getElementById("message").innerHTML="*Please fill Phone number";
+return false;
+}
+if(isNaN(a)){
+document.getElementById("message").innerHTML="*Please enter numeric value";
+return false;
+}
+if(a.length<10){
+document.getElementById("message").innerHTML="*Please enter 10 digit value";
+return false;
+}
+if(a.length>10){
+document.getElementById("message").innerHTML="*Please enter 10 digit value";
+return false;
+}
+if(!yop.checkValidity()){
+alert("NOT ELIGIBLE TO REGISTER!!...year of passing should be between 2020 to 2022");
+document.getElementById("message").innerHTML="*enter year of passing between 2020 to 2022";
+return false;
+}
+if((b=="")&&(b1=="")&&(b2=="")&&(b3==""))
+{
+document.getElementById("message").innerHTML="*select specification!!";
+return false;
+}
+else{
+alert("Form is submitted Successfully!");
+}
+}
+
+function get1(){
+var rd1=document.getElementById("per");
+var rd2=document.getElementById("cgpa");
+var ss=document.getElementById('ss').value;
+var pu=document.getElementById('pu').value;
+var de=document.getElementById('de').value;
+
+if(rd1.checked==true){
+if(ss.length<3 && pu.length<3 && de.length<3)
+document.getElementById("message").innerHTML="";
+else
+document.getElementById("message").innerHTML="*Percentage should in two digits";
+return false;}
+
+if(rd2.checked==true){
+if(isNaN(ss) && isNaN(pu) && isNaN(de)){
+if(ss.length<2 && pu.length<2 && de.length<2)
+document.getElementById("message").innerHTML="";
+else
+document.getElementById("message").innerHTML="*CGPA should be in grades";
+return false;}
+else
+document.getElementById("message").innerHTML="*CGPA should be in grades";}
+}
+
+
+</script>
+</form>
+</div>
+</div>
+</body>
+</html>
